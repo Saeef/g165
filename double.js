@@ -7,6 +7,7 @@
       this.mcsstwo();
       this.mcssthree();
       this.mcssfour();
+      this.mobile();
       this.banner();
       
     }, //init 
@@ -68,8 +69,8 @@
     }, //maincss 
     
     mcssfour: function () {
-      console.info('%c csstwo \u221a', 'background:blue;color:white;');
-      var mainfour = '  ';
+      console.info('%c cssfour \u221a', 'background:blue;color:white;');
+      var mainfour = '@media only screen and (max-width:1500px) and (min-width:992px) { td.pone p {color:#333;} td.ptwo p {color:#333;} td.pthree p {color:#333;} span.three {color:#333;} span.two {color:#333;} }  @media screen and (max-width:991px){ td.pone p {color:#333;} td.ptwo p {color:#333;} td.pthree p {color:#333;} span.three {color:#333;} span.two {color:#333;}  } ';
 
       var head = document.getElementsByTagName('head')[0];
       function addcss(css) {
@@ -81,6 +82,21 @@
       addcss(mainfour);
 
     }, //maincss 
+    
+    mobile: function() {
+      console.info('%c mobile \u221a', 'background:blue;color:white;');
+      var mainmobile = '@media only screen and (max-device-width:1024px) and (min-device-width:1024px) { span.two {margin-left:-10px !important;} span.three {margin-left:-77px !important; } .heading img.hero {margin-left:0 !important;} .heading h3 {font-size:18px !important; }  }   @media only screen and (max-device-width:768px) and (min-device-width:768px) { td.pone p {margin-left:49px !important;} td span.two {margin-left:-25px !important;} td.ptwo p {width:155px !important; padding-right:0px !important;} td span.three {margin-left:-5px !important; } .heading img.hero {margin-left:4.5em !important;} .heading h3 {font-size:14px !important; max-width:290px !important; } td.pthree p:nth-child(2) {margin-right:22px !important;} .terms .gaware {margin-right:2.1em !important;}}  @media only screen and (max-device-width:414px) and (min-device-width:414px) { #doubleodds {width:414px !important;} table.main {width:414px !important;} table.inner {width:414px !important;} .heading h2 {font-size:10px !important; max-width:180px !important;} .heading h1 {font-size:20px !important; max-width:190px !important; line-height:24px !important; } .heading h3 {margin-top:0px !important; font-size:11px !important; max-width:220px !important;} td img.hero {margin-left:0px !important; margin-right:1em; margin-top:5px; max-width:250px !important;} img.imgres {max-width:10px !important;} .terms .gaware {margin-right: 1em !important; }    }    ';
+
+      var head = document.getElementsByTagName('head')[0];
+      function addcss(css) {
+        var s = document.createElement('style');
+        s.setAttribute('type', 'text/css');
+        s.appendChild(document.createTextNode(css));
+        head.appendChild(s);
+      }
+      addcss(mainmobile);
+      
+    },//mobile
 
 
     banner: function () {
